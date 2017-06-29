@@ -7,6 +7,10 @@ hrApp.config(['$routeProvider',
             templateUrl: 'views/main.html',
             controller: 'MainController'
         }).
+        when('/user', {
+            templateUrl: 'views/user.html',
+            controller: 'EmployeeListController'
+        }).
         when('/employeeslist', {
             templateUrl: 'views/employeelist.html',
             controller: 'EmployeeListController'
@@ -21,7 +25,7 @@ hrApp.config(['$routeProvider',
         }).
 
         when('/employeesview/:employeeid', {
-            templateUrl: 'views/employeesview.html',
+            templateUrl: 'views/employeeview.html',
             controller: 'EmployeeViewController'
         }).
         when('/numbers/', {

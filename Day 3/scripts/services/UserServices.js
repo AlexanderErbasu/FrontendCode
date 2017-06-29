@@ -1,0 +1,5 @@
+
+hrApp.service("UserService", function() {
+
+});
+

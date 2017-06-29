@@ -6,6 +6,7 @@ hrApp.controller('EmployeeListController', ['$scope', '$http', '$location','comm
 
 
         //TODO #HR3 Load employee list from server using commonResourcesFactory
+        //$commonResourcesFactory.findAllEmployeesUrl instead of the URL --> factory
         $http.get($commonResourcesFactory.findAllEmployeesUrl)
             .success(function (data, status, headers,config) {
                  $scope.employees = data;
@@ -18,7 +19,7 @@ hrApp.controller('EmployeeListController', ['$scope', '$http', '$location','comm
 
 
         $scope.viewEmployee = function (employeeId) {
-            $location.url('/employeeview/' + employeeId);
+            $location.url('/employeesview/' + employeeId);
         };
 
 
