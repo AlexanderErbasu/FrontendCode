@@ -1,0 +1,7 @@
+<div>
+    <select ng-options="color as color.text group by color.type for color in colors" ng-model="dropDown" ng-change="changeColor()">
+
+    </select>
+
+    <p ng-class="colorStyle">You have selected the class </p>
+</div>
