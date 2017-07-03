@@ -5,7 +5,39 @@ hrApp.controller('EmployeeEditController', ['$scope', '$http', '$routeParams', '
         $scope.patternCommisionNotRespectedMessage = "Commission should be in the format 0.XX";
 
         //TODO #HR5
-
+        /*
+        $http({url: CommonResourcesFactory.findAllEmployeesUrl, method: 'GET'})
+            .success(function (data, status, headers, config) {
+                $scope.employees = data;
+            });
+            */
+        $http({url: CommonResourcesFactory.findAllJobsUrl, method: 'GET'})
+            .success(function (data, status, headers, config) {
+                $scope.jobs = data;
+            });
+        $http({url: CommonResourcesFactory.findAllDepartmentsUrl, method: 'GET'})
+            .success(function (data, status, headers, config) {
+                $scope.departaments = data;
+            });
+        $http({url: CommonResourcesFactory.findAllEmployeesUrl, method: 'GET'})
+            .success(function (data, status, headers, config) {
+                managersIdObj={};
+                for (var i=0;i<data.length;i++){
+                    if(data[i].managerId != null){
+                        managersIdObj[data[i].managerId] =true;
+                    }
+                }
+                for(var i=0;i<data.length;i++)
+                    if(managersIdObj[data[i].if==true]){
+                        $scope.managers.push(data[i]);
+                    }
+            });
+        EmployeeService.findById($routeParams.employeeId)
+            .then(function (res) {
+                $scope.employee = res.data;
+            }, function (err) {
+                console.log("Error at employees/findOne: " + err);
+            });
         /**
          * Reset form
          */

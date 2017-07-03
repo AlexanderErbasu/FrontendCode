@@ -8,6 +8,10 @@ hrApp.config(['$routeProvider',
             .when('/numbers', {
                 redirectTo: '/math'
             })
+            .when('/employeeAdd', {
+                templateUrl: 'views/employeeAdd.html',
+                controller: 'EmployeeAddController'
+            })
             .when('/math', {
                 templateUrl: 'views/demo/math.html',
                 controller: 'MathController'
@@ -23,6 +27,10 @@ hrApp.config(['$routeProvider',
             .when('/user', {
                 templateUrl: 'views/demo/user.html',
                 controller: 'UserController'
+            })
+            .when('/employeeEdit/:employeeId', {
+                templateUrl: 'views /employeeEdit.html',
+                controller: 'EmployeeEditController'
             })
             .otherwise({
                 templateUrl: 'views/main.html',

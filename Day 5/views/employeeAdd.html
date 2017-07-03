@@ -4,18 +4,46 @@
     </div>
     <div class="panel-body">
         <ng-form name="employeeAddForm">
+            <!--
+
+            <label>First Name: </label>
+            <input type="text" id="firstName" name="firstName" class="form-control"  ng-model="employee.firstName">
+
+            <label>Last Name:</label>
+            <input type="text" id="lastName" name="lastName" class="form-control"  ng-model="employee.lastName">
+
+            <label>Email: </label>
+            <input type="text" id="email" name="email" class="form-control"  ng-model="employee.email">
+
+            <label>Phone Number: </label>
+            <input type="number" id="phoneNo" name="phoneNo" class="form-control"  ng-model="employee.phoneNumber">
+
+            <label>Job Title</label>
+            <select ng-model="employee.jobId">
+            </select>
+
+            <label>Salary: </label>
+            <input type="number" id="salary" name="salary" class="form-control"  ng-model="employee.salary">
+
+            <label>Departament</label>
+            <select ng-model="employee.departament">
+            </select>
+
+            -->
+
             <div class="row">
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group" >
-                        <!--TODO#HR2-->
-
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.firstName.$invalid }">
+                        <label>First Name: </label>
+                        <input type="text" id="firstName" name="firstName" class="form-control"  ng-model="employee.firstName">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
-                        <!--TODO#HR2-->
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.lastName.$invalid }">
+                        <label>Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control"  ng-model="employee.lastName">
 
                     </div>
                 </div>
@@ -23,15 +51,17 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
-                        <!--TODO#HR2-->
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.email.$invalid }">
+                        <label>Email: </label>
+                        <input type="text" id="email" name="email" class="form-control"  ng-model="employee.email">
 
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group">
-                        <!--TODO#HR2-->
+                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.phoneNo.$invalid }">
+                        <label>Phone Number: </label>
+                        <input type="number" id="phoneNo" name="phoneNo" class="form-control"  ng-model="employee.phoneNumber">
 
                     </div>
                 </div>
@@ -51,7 +81,9 @@
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
                     <div class="form-group">
-                        <!--TODO#HR2-->
+                        <label>Job Title</label>
+                        <input type="text" id="title" name="title" class="form-control"  ng-model="employee.jobId">
+
                     </div>
                 </div>
             </div>
@@ -59,7 +91,8 @@
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
                     <div class="form-group">
-                        <!--TODO#HR2-->
+                        <label>Salary: </label>
+                        <input type="number" id="salary" name="salary" class="form-control"  ng-model="employee.salary">
 
                     </div>
                 </div>
@@ -79,7 +112,8 @@
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
                     <div class="form-group">
-                        <!--TODO#HR2-->
+                        <label>Departament</label>
+                        <input id="departament" ng-model="employee.departament" name="departament" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -95,7 +129,8 @@
                 <div class="col-md-5"></div>
                 <div class="col-md-7">
                     <div class="container">
-                        <!--TODO#HR4-->
+                        <button ng-click="reset()">Reset</button>
+                        <button type="submit" id="submit" ng-click="create()">Create New Employee</button>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,6 @@
-hrApp.controller('EmployeeListController', ['$scope', '$http', '$location', 'CommonResourcesFactoryBackup',
-    function ($scope, $http, $location, CommonResourcesFactoryBackup) {
+hrApp.controller('EmployeeListController', ['$scope', '$http', '$location', 'CommonResourcesFactory',
+    function ($scope, $http, $location, CommonResourcesFactory) {
 
-        $scope.employees = [];
-
-         /*
          $scope.employees = [
          {
              "id": 100,
@@ -45,9 +42,9 @@ hrApp.controller('EmployeeListController', ['$scope', '$http', '$location', 'Com
              "departmentId": 90
          }
          ];
-         */
 
-        $http({url: CommonResourcesFactoryBackup.findAllEmployeesUrl, method: 'GET'})
+
+        $http({url: CommonResourcesFactory.findAllEmployeesUrl, method: 'GET'})
             .success(function (data, status, headers, config) {
                 $scope.employees = data;
             });
